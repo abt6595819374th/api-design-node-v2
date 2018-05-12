@@ -12,6 +12,8 @@ connect()
 
 app.use('/signin', signin)
 
+app.use('/api', restRouter)
+
 // catch all
 app.all('*', (req, res) => {
   res.json({ok: true})
