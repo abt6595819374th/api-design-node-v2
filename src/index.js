@@ -2,10 +2,12 @@ import http from 'http'
 import { createServer } from 'http'
 
 import app from './server'
-let currentApp = app
 
-currentApp.listen(3000, () => {
-	console.log('http://localhost:3000');
+const server = http.createServer(app);
+let currentApp = app;
+
+server.listen(3000, () => {
+  console.log('Server listening on port 3000');
 });
 
 if (module.hot) {
